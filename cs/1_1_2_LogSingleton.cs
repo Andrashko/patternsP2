@@ -41,7 +41,14 @@ namespace cs
 
         public void ShowLog()
         {
-            //тут потрібно реалізувати вивід логу з файлу в консоль
+            using (StreamReader sr = new StreamReader(this.fileName))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
         }
     }
 }
